@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    name: defaultDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lightning?useUnicode=true&useInformationSchema=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: lightning
+    password: wz6nGMpD278wTBi2
+  jpa:
+    show-sql: false
+knife4j:
+  production: true
+
+
+

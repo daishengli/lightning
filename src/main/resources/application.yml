@@ -1,0 +1,52 @@
+server:
+  servlet:
+    context-path: /api
+spring:
+  profiles:
+    active: @activeProfile@
+  mail:
+    username: your_email
+    password: your_email_password
+    host: your_email_host
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            socketFactory:
+              class: com.sun.mail.util.MailSSLSocketFactory
+              fallback: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+springdoc:
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: top.daishengli.lightning.controller
+knife4j:
+  enable: true
+  setting:
+    enable-swagger-models: true
+    enable-document-manage: true
+    swagger-model-name: 实体类列表
+    enable-footer: false
+    enable-footer-custom: true
+    footer-custom-content: Copyright @ 2024 daishengli All Rights Reserved.
+sa-token:
+  token-name: token
+  timeout: -1
+  active-timeout: -1
+  is-concurrent: true
+  is-share: true
+  token-style: tik
+  is-log: false
+  is-print: false
+
+
